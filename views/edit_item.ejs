@@ -1,0 +1,34 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/items/edit/<%=data[0].id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="name" value="<%=data[0].name%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label" valign="top">Description</td>
+                    <td valign="top">: 
+                        <textarea name="description" required cols="30" rows="5"><%=data[0].description%></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Price</td><td>: <input type="text" value="<%=data[0].price%>" name="price" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">Category</td><td>: <input type="text" name="type_id" value="<%=data[0].type_id%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd('items')">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>
